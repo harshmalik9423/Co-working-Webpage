@@ -10,7 +10,7 @@ router.get('/register', (req, res) => res.render('register'));        //Reigiste
 
 // Register POST 
 router.post('/register', (req,res) => {
-    const { name, email, password, password2 } = req.body;
+    const { name, email, icon, password, password2 } = req.body;
     let errors = [];
 
     if(!name || !email || !password || !password2) {
@@ -30,6 +30,7 @@ router.post('/register', (req,res) => {
             errors,
             name,
             email,
+            icon,
             password,
             password2
         });
@@ -44,6 +45,7 @@ router.post('/register', (req,res) => {
                             errors,
                             name,
                             email,
+                            icon,
                             password,
                             password2
                         });
@@ -51,6 +53,7 @@ router.post('/register', (req,res) => {
                     const newUser = new User({
                         name,
                         email,
+                        icon,
                         password
                     });
                     
