@@ -1,7 +1,12 @@
 const express = require('express');
 const router = express.Router();
+const { ensureAuthenticated } = require('../config/auth');
 
 router.get('/', (req, res) => res.render('welcome'));  //Index Pagerouter
-router.get('/dashboard', (req, res) => res.render('dashboard'));    //Dashboard router
+//Dashboard router
+router.get('/dashboard', ensureAuthenticated, (req, res) => 
+    res.render('dashboard', {
+        name: req.user.name
+    }));    
 
 module.exports = router;
