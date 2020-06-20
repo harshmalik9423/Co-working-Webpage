@@ -1,12 +1,20 @@
-<h1 class="mt-3">Welcome <%= name %>, you've logged in Successfully!</h1>
-<h3>Total number of logged in users are: <%= activeUsers %></h3>
+<div class="row">
+    <h1 class="mt-3">Welcome <%= name %>, you've logged in Successfully!</h1>
+    <h3>Total number of logged in users are: <%= activeUsers %></h3>
+</div>
 
-
-
-<ul class="list-group">
-    <% Log.forEach(function(entry) { %>
-        <li class="list-group-item"><%= entry.email %> &nbsp; -> logged in at : <%= entry.Log %></li>
-    <% }); %>
-</ul>
-
+<div class="row">
+    <div class="col-2">
+        <% resultUsers.forEach(function(user) { %>
+            <img class="img-thumbnail rounded-circle" src=<%= user.icon %> alt="<%= user.email %>_icon" width=20%/>
+        <% }); %>
+    </div>
+</div>
+<div class="row">
+    <ul class="list-group">
+        <% Log.forEach(function(entry) { %>
+            <li class="list-group-item"><%= entry.email %> &nbsp; -> logged in at : <%= entry.Log %></li>
+        <% }); %>
+    </ul>
+</div>
 <a href="/users/logout" class="btn btn-secondary">Logout</a>
