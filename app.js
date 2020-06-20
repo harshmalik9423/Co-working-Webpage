@@ -1,6 +1,11 @@
 const express = require('express');
+const expressLayouts = require('express-ejs-layouts');
 
 const app = express();
+
+//Set view for ejs
+app.use(expressLayouts);
+app.set('view engine', 'ejs');
 
 //ROUTES
 app.use('/', require('./routes/index'));
