@@ -21,6 +21,7 @@ mongoose.connect(db, {useNewUrlParser: true, useUnifiedTopology: true})
 //Set view for ejs
 app.use(expressLayouts);
 app.set('view engine', 'ejs');
+app.use( express.static( "public" ));
 
 //Bodyparser
 app.use(express.urlencoded({ extended: true }));

@@ -74,6 +74,15 @@ router.post('/register', (req,res) => {
 
 //Login POST
 router.post('/login', (req, res, next) => {
+    const email = req.body.email;
+    User.findOne({email: email})
+        .then(user => {
+            if(user) {
+                user.active= true;
+                user.save();
+            }
+        })
+
     passport.authenticate('local', {
       successRedirect: '/dashboard',
       failureRedirect: '/users/login',
@@ -82,7 +91,16 @@ router.post('/login', (req, res, next) => {
 });
 
 router.get('/logout', (req, res) => {
+    const email = req.user.email;
+    console.log(email);
     req.logOut();
+    User.findOne({email: email})
+        .then(user => {
+            if(user) {
+                user.active= false;
+                user.save();
+            }
+        })
     req.flash('success_msg', 'You have successfully logged out');
     res.redirect('/users/login');
 });
