@@ -79,6 +79,7 @@ router.post('/login', (req, res, next) => {
         .then(user => {
             if(user) {
                 user.active= true;
+                user.date= Date(Date.now);
                 user.save();
             }
         })
@@ -92,7 +93,6 @@ router.post('/login', (req, res, next) => {
 
 router.get('/logout', (req, res) => {
     const email = req.user.email;
-    console.log(email);
     req.logOut();
     User.findOne({email: email})
         .then(user => {

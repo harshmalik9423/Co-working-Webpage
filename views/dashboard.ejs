@@ -1,2 +1,12 @@
-<h1 class="mt-3">Welcome <%= email %>, you've logged in <%= activeUsers %></h1>
+<h1 class="mt-3">Welcome <%= name %>, you've logged in Successfully!</h1>
+<h3>Total number of logged in users are: <%= activeUsers %></h3>
+
+
+
+<ul class="list-group">
+    <% Log.forEach(function(entry) { %>
+        <li class="list-group-item"><%= entry.email %> &nbsp; -> logged in at : <%= entry.Log %></li>
+    <% }); %>
+</ul>
+
 <a href="/users/logout" class="btn btn-secondary">Logout</a>
