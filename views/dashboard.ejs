@@ -9,18 +9,68 @@
 
 <div class="row">
     <div class="col-2" style="position: relative; left: 0; top: 0;">
-        <img class="rounded-circle" style="position: relative; top: 0; left: 0;" src=<%= resultUsers[0].icon %> alt="<%= resultUsers[0].email %>_icon" width=30%/>
+        <img 
+            class="rounded-circle image" 
+            style="position: relative; top: 0; left: 0;" 
+            src=<%= resultUsers[0].icon %> 
+            alt="<%= resultUsers[0].email %>_icon" 
+            width=30%
+            data-toggle="tooltip"
+            data-html="true"
+            title="<%= resultUsers[0].email %>"
+            data-placement="bottom"
+        />
         <% if(activeUsers >1) { %>
-            <img class="rounded-circle" style="position: absolute; top: 0; left: 40px;" src=<%= resultUsers[1].icon %> alt="<%= resultUsers[1].email %>_icon" width=30%/>
+            <img 
+                class="rounded-circle image" 
+                style="position: absolute; top: 0; left: 40px;" 
+                src=<%= resultUsers[1].icon %> 
+                alt="<%= resultUsers[1].email %>_icon" 
+                width=30%
+                data-toggle="tooltip"
+                data-html="true"
+                title="<%= resultUsers[1].email %>"
+                data-placement="bottom"
+            />
         <% } %>
         <% if(activeUsers >2) { %>
-            <img class="rounded-circle" style="position: absolute; top: 0; left: 75px; z-index:1;"  src=<%= resultUsers[2].icon %> alt="<%= resultUsers[2].email %>_icon" width=30%/>
+            <img 
+                class="rounded-circle image" 
+                style="position: absolute; top: 0; left: 75px; z-index:1;"  
+                src=<%= resultUsers[2].icon %> 
+                alt="<%= resultUsers[2].email %>_icon" 
+                width=30%
+                data-toggle="tooltip"
+                data-html="true"
+                title="<%= resultUsers[2].email %>"
+                data-placement="bottom"
+            />
         <% } %>
         <% if(activeUsers >3) { %>
-            <img class="rounded-circle" style="position: absolute; top: 0; left: 110px; z-index:2;" src=<%= resultUsers[3].icon %> alt="<%= resultUsers[3].email %>_icon" width=40%/>
+            <img 
+                class="rounded-circle image" 
+                style="position: absolute; top: 0; left: 110px; z-index:2;" 
+                src=<%= resultUsers[3].icon %> 
+                alt="<%= resultUsers[3].email %>_icon" 
+                width=40%
+                data-toggle="tooltip"
+                data-html="true"
+                title="<%= resultUsers[3].email %>"
+                data-placement="bottom"
+            />
         <% } %>
         <% if(activeUsers >4) { %>
-            <img class="rounded-circle" style="position: absolute; top: 0; left: 145px; z-index:3;" src=<%= resultUsers[4].icon %> alt="<%= resultUsers[4].email %>_icon" width=40%/>
+            <img 
+                class="rounded-circle image" 
+                style="position: absolute; top: 0; left: 145px; z-index:3;" 
+                src=<%= resultUsers[4].icon %> 
+                alt="<%= resultUsers[4].email %>_icon" 
+                width=40%
+                data-toggle="tooltip"
+                data-html="true"
+                title="<%= resultUsers[4].email %>"
+                data-placement="bottom"
+            />
         <% } %>
         <% if(activeUsers >5) { %>
             <h6 style="position: absolute; top: 0; left: 180px; z-index:4;">+ <%= activeUsers-5 %></h6>
@@ -36,3 +86,9 @@
     </ul>
 </div>
 <a href="/users/logout" class="btn btn-secondary">Logout</a>
+
+<script>
+    $(document).ready(function() {
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+</script>
