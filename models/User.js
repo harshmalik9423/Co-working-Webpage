@@ -11,7 +11,7 @@ const UserSchema = new mongoose.Schema({
     },
     icon: {
         type: String,
-        default: "https://www.iconspng.com/images/-abstract-user-icon-1/-abstract-user-icon-1.jpg"
+        required: true
     },
     password: {
         type: String,

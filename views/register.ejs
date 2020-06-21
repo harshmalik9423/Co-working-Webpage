@@ -28,15 +28,39 @@
               value="<%= typeof email != 'undefined' ? email : '' %>"
             />
             <div class="form-group">
-              <label for="icon">Icon URL</label>
-              <input
-                type="url"
-                id="icon"
-                name="nicon"
-                class="form-control"
-                placeholder="Enter URL of your icon"
-                value=  "/images/icon.jpg"
-              />
+              <label for="icon">Icon</label>
+              <div class="col">
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="icon" id="icon1" value="/images/icon1.jpg">
+                  <label class="form-check-label" for="icon1">
+                    <img class="img-thumbnail rounded-circle" src="/images/icon1.jpg" alt="icon1" width=40%>
+                  </label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="icon" id="icon2" value="/images/icon2.png">
+                  <label class="form-check-label" for="icon2">
+                    <img class="i rounded-circle" src="/images/icon2.png" alt="icon2" width=50%>
+                  </label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="icon" id="icon3" value="/images/icon3.png">
+                  <label class="form-check-label" for="icon3">
+                    <img class="img-thumbnail rounded-circle" src="/images/icon3.png" alt="icon3" width=40%>
+                  </label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="icon" id="icon4" value="/images/icon4.png">
+                  <label class="form-check-label" for="icon4">
+                    <img class="img-thumbnail rounded-circle" src="/images/icon4.png" alt="icon4" width=40%>
+                  </label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="icon" id="icon5" value="/images/icon5.png">
+                  <label class="form-check-label" for="icon5">
+                    <img class="img-thumbnail rounded-circle" src="/images/icon5.png" alt="icon5" width=40%>
+                  </label>
+                </div>
+            </div>
           </div>
           <div class="form-group">
             <label for="password">Password</label>
