@@ -36,7 +36,7 @@
         <% if(activeUsers >2) { %>
             <img 
                 class="rounded-circle image" 
-                style="position: absolute; top: 0; left: 75px; z-index:1;"  
+                style="position: absolute; top: 0; left: 75px;"  
                 src=<%= resultUsers[2].icon %> 
                 alt="<%= resultUsers[2].email %>_icon" 
                 width=30%
@@ -49,7 +49,7 @@
         <% if(activeUsers >3) { %>
             <img 
                 class="rounded-circle image" 
-                style="position: absolute; top: 0; left: 110px; z-index:2;" 
+                style="position: absolute; top: 0; left: 110px;" 
                 src=<%= resultUsers[3].icon %> 
                 alt="<%= resultUsers[3].email %>_icon" 
                 width=30%
@@ -62,7 +62,7 @@
         <% if(activeUsers >4) { %>
             <img 
                 class="rounded-circle image" 
-                style="position: absolute; top: 0; left: 145px; z-index:3;" 
+                style="position: absolute; top: 0; left: 145px;" 
                 src=<%= resultUsers[4].icon %> 
                 alt="<%= resultUsers[4].email %>_icon" 
                 width=30%
@@ -73,7 +73,18 @@
             />
         <% } %>
         <% if(activeUsers >5) { %>
-            <h6 style="position: absolute; top: 0; left: 180px; z-index:4;">+ <%= activeUsers-5 %></h6>
+            <img 
+                class="rounded-circle image" 
+                style="position: absolute; top: 0; left: 180px;" 
+                src="/images/icon6.png"
+                alt="others" 
+                width=30%
+                data-toggle="tooltip"
+                data-html="true"
+                title="Other Users"
+                data-placement="bottom"
+            />
+            <h2 style="position: absolute; top: 0; left: 195px;">+ <%= activeUsers-5 %></h2>
         <% } %>
     </div>
 </div>
